@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.giao.ssm.mapper.ExportProductCMapper">
+  <insert id="insertSelective" parameterType="com.giao.ssm.pojo.ExportProductC">
+    insert into EXPORT_PRODUCT_C
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="exportProductId != null">
+        EXPORT_PRODUCT_ID,
+      </if>
+      <if test="contractProductId != null">
+        CONTRACT_PRODUCT_ID,
+      </if>
+      <if test="exportId != null">
+        EXPORT_ID,
+      </if>
+      <if test="factoryId != null">
+        FACTORY_ID,
+      </if>
+      <if test="contractId != null">
+        CONTRACT_ID,
+      </if>
+      <if test="contractNo != null">
+        CONTRACT_NO,
+      </if>
+      <if test="productName != null">
+        PRODUCT_NAME,
+      </if>
+      <if test="productNo != null">
+        PRODUCT_NO,
+      </if>
+      <if test="productImage != null">
+        PRODUCT_IMAGE,
+      </if>
+      <if test="productDesc != null">
+        PRODUCT_DESC,
+      </if>
+      <if test="loadingRate != null">
+        LOADING_RATE,
+      </if>
+      <if test="packingUnit != null">
+        PACKING_UNIT,
+      </if>
+      <if test="cnumber != null">
+        CNUMBER,
+      </if>
+      <if test="outNumber != null">
+        OUT_NUMBER,
+      </if>
+      <if test="finished != null">
+        FINISHED,
+      </if>
+      <if test="grossWeight != null">
+        GROSS_WEIGHT,
+      </if>
+      <if test="netWeight != null">
+        NET_WEIGHT,
+      </if>
+      <if test="sizeLenght != null">
+        SIZE_LENGHT,
+      </if>
+      <if test="sizeWidth != null">
+        SIZE_WIDTH,
+      </if>
+      <if test="sizeHeight != null">
+        SIZE_HEIGHT,
+      </if>
+      <if test="productRequest != null">
+        PRODUCT_REQUEST,
+      </if>
+      <if test="factory != null">
+        FACTORY,
+      </if>
+      <if test="price != null">
+        PRICE,
+      </if>
+      <if test="amount != null">
+        AMOUNT,
+      </if>
+      <if test="cunit != null">
+        CUNIT,
+      </if>
+      <if test="boxNum != null">
+        BOX_NUM,
+      </if>
+      <if test="exPrice != null">
+        EX_PRICE,
+      </if>
+      <if test="exUnit != null">
+        EX_UNIT,
+      </if>
+      <if test="noTax != null">
+        NO_TAX,
+      </if>
+      <if test="tax != null">
+        TAX,
+      </if>
+      <if test="costPrice != null">
+        COST_PRICE,
+      </if>
+      <if test="costTax != null">
+        COST_TAX,
+      </if>
+      <if test="accessories != null">
+        ACCESSORIES,
+      </if>
+      <if test="orderNo != null">
+        ORDER_NO,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="exportProductId != null">
+        #{exportProductId,jdbcType=VARCHAR},
+      </if>
+      <if test="contractProductId != null">
+        #{contractProductId,jdbcType=VARCHAR},
+      </if>
+      <if test="exportId != null">
+        #{exportId,jdbcType=VARCHAR},
+      </if>
+      <if test="factoryId != null">
+        #{factoryId,jdbcType=VARCHAR},
+      </if>
+      <if test="contractId != null">
+        #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="contractNo != null">
+        #{contractNo,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="productNo != null">
+        #{productNo,jdbcType=VARCHAR},
+      </if>
+      <if test="productImage != null">
+        #{productImage,jdbcType=VARCHAR},
+      </if>
+      <if test="productDesc != null">
+        #{productDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="loadingRate != null">
+        #{loadingRate,jdbcType=VARCHAR},
+      </if>
+      <if test="packingUnit != null">
+        #{packingUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="cnumber != null">
+        #{cnumber,jdbcType=DECIMAL},
+      </if>
+      <if test="outNumber != null">
+        #{outNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="finished != null">
+        #{finished,jdbcType=DECIMAL},
+      </if>
+      <if test="grossWeight != null">
+        #{grossWeight,jdbcType=DECIMAL},
+      </if>
+      <if test="netWeight != null">
+        #{netWeight,jdbcType=DECIMAL},
+      </if>
+      <if test="sizeLenght != null">
+        #{sizeLenght,jdbcType=DECIMAL},
+      </if>
+      <if test="sizeWidth != null">
+        #{sizeWidth,jdbcType=DECIMAL},
+      </if>
+      <if test="sizeHeight != null">
+        #{sizeHeight,jdbcType=DECIMAL},
+      </if>
+      <if test="productRequest != null">
+        #{productRequest,jdbcType=VARCHAR},
+      </if>
+      <if test="factory != null">
+        #{factory,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="cunit != null">
+        #{cunit,jdbcType=VARCHAR},
+      </if>
+      <if test="boxNum != null">
+        #{boxNum,jdbcType=DECIMAL},
+      </if>
+      <if test="exPrice != null">
+        #{exPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="exUnit != null">
+        #{exUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="noTax != null">
+        #{noTax,jdbcType=DECIMAL},
+      </if>
+      <if test="tax != null">
+        #{tax,jdbcType=DECIMAL},
+      </if>
+      <if test="costPrice != null">
+        #{costPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="costTax != null">
+        #{costTax,jdbcType=DECIMAL},
+      </if>
+      <if test="accessories != null">
+        #{accessories,jdbcType=DECIMAL},
+      </if>
+      <if test="orderNo != null">
+        #{orderNo,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+
+  <select id="find" resultType="ExportProductC" parameterType="map">
+    	select * from 	EXPORT_PRODUCT_C where EXPORT_ID=#{exportId}
+  </select>
+
+  <select id="get" resultType="ExportProductC">
+    	select * from EXPORT_PRODUCT_C where   EXPORT_PRODUCT_ID=#{exportProductId}
+  </select>
+
+
+
+  <update id="updateEpp" parameterType="com.giao.ssm.pojo.ExportProductC">
+    update EXPORT_PRODUCT_C
+    <set>
+      <if test="contractProductId != null">
+        CONTRACT_PRODUCT_ID = #{contractProductId,jdbcType=VARCHAR},
+      </if>
+      <if test="exportId != null">
+        EXPORT_ID = #{exportId,jdbcType=VARCHAR},
+      </if>
+      <if test="factoryId != null">
+        FACTORY_ID = #{factoryId,jdbcType=VARCHAR},
+      </if>
+      <if test="contractId != null">
+        CONTRACT_ID = #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="contractNo != null">
+        CONTRACT_NO = #{contractNo,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        PRODUCT_NAME = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="productNo != null">
+        PRODUCT_NO = #{productNo,jdbcType=VARCHAR},
+      </if>
+      <if test="productImage != null">
+        PRODUCT_IMAGE = #{productImage,jdbcType=VARCHAR},
+      </if>
+      <if test="productDesc != null">
+        PRODUCT_DESC = #{productDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="loadingRate != null">
+        LOADING_RATE = #{loadingRate,jdbcType=VARCHAR},
+      </if>
+      <if test="packingUnit != null">
+        PACKING_UNIT = #{packingUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="cnumber != null">
+        CNUMBER = #{cnumber,jdbcType=DECIMAL},
+      </if>
+      <if test="outNumber != null">
+        OUT_NUMBER = #{outNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="finished != null">
+        FINISHED = #{finished,jdbcType=DECIMAL},
+      </if>
+      <if test="grossWeight != null">
+        GROSS_WEIGHT = #{grossWeight,jdbcType=DECIMAL},
+      </if>
+      <if test="netWeight != null">
+        NET_WEIGHT = #{netWeight,jdbcType=DECIMAL},
+      </if>
+      <if test="sizeLenght != null">
+        SIZE_LENGHT = #{sizeLenght,jdbcType=DECIMAL},
+      </if>
+      <if test="sizeWidth != null">
+        SIZE_WIDTH = #{sizeWidth,jdbcType=DECIMAL},
+      </if>
+      <if test="sizeHeight != null">
+        SIZE_HEIGHT = #{sizeHeight,jdbcType=DECIMAL},
+      </if>
+      <if test="productRequest != null">
+        PRODUCT_REQUEST = #{productRequest,jdbcType=VARCHAR},
+      </if>
+      <if test="factory != null">
+        FACTORY = #{factory,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        PRICE = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="amount != null">
+        AMOUNT = #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="cunit != null">
+        CUNIT = #{cunit,jdbcType=VARCHAR},
+      </if>
+      <if test="boxNum != null">
+        BOX_NUM = #{boxNum,jdbcType=DECIMAL},
+      </if>
+      <if test="exPrice != null">
+        EX_PRICE = #{exPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="exUnit != null">
+        EX_UNIT = #{exUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="noTax != null">
+        NO_TAX = #{noTax,jdbcType=DECIMAL},
+      </if>
+      <if test="tax != null">
+        TAX = #{tax,jdbcType=DECIMAL},
+      </if>
+      <if test="costPrice != null">
+        COST_PRICE = #{costPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="costTax != null">
+        COST_TAX = #{costTax,jdbcType=DECIMAL},
+      </if>
+      <if test="accessories != null">
+        ACCESSORIES = #{accessories,jdbcType=DECIMAL},
+      </if>
+      <if test="orderNo != null">
+        ORDER_NO = #{orderNo,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where EXPORT_PRODUCT_ID = #{exportProductId,jdbcType=VARCHAR}
+  </update>
+</mapper>

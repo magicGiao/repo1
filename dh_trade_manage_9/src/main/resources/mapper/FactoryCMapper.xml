@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.giao.ssm.mapper.FactoryCMapper">
+
+
+    <select id="findFactAll" resultType="factoryC" >
+        select *from FACTORY_C ORDER BY create_time
+    </select>
+
+    <insert id="addFact" parameterType="factoryC" >
+        insert into
+        FACTORY_C
+        values(#{factoryId},#{fullName},#{factoryName},#{contactor},#{phone},#{mobile},#{fax},#{cnote},#{ctype},#{state},#{inspector},#{orderNo},#{createBy},#{createDept},SYSDATE)
+    </insert>
+
+<!--    <delete id="deleteByid" parameterType="String">-->
+<!--        delete  from FACTORY_C where factory_id=#{factoryId}-->
+<!--    </delete>-->
+
+    <delete id="deleteByid" parameterType="String">
+            DELETE FROM  FACTORY_C  WHERE factory_id IN
+            <foreach collection="array" item="factoryId" open="(" separator="," close=")">
+                #{factoryId}
+            </foreach>
+    </delete>
+
+
+
+<!--    <update id="start" parameterType="String">-->
+<!--        UPDATE FACTORY_C set state='1' where factory_id=#{factoryId}-->
+<!--    </update>-->
+<!--    <update id="stop" parameterType="String">-->
+<!--            UPDATE FACTORY_C set state='2' where factory_id=#{factoryId}-->
+<!--     </update>-->
+
+<!--    批量启用停用优化后-->
+    <update id="start" parameterType="String">
+        UPDATE FACTORY_C set state='1' where factory_id in
+        <foreach collection="array" item="factoryId" open="(" separator="," close=")">
+            #{factoryId}
+        </foreach>
+    </update>
+    <update id="stop" parameterType="String">
+            UPDATE FACTORY_C set state='0' where factory_id in
+        <foreach collection="array" item="factoryId" open="(" separator="," close=")">
+             #{factoryId}
+        </foreach>
+     </update>
+
+
+    <select id="findFactOne" resultType="factoryC">
+        select * from FACTORY_C where factory_id=#{factoryId}
+    </select>
+
+    <update id="updateFac" parameterType="factoryC">
+            UPDATE FACTORY_C set full_name=#{fullName},factory_name=#{factoryName},contactor=#{contactor},phone=#{phone},mobile=#{mobile},fax=#{fax},cnote=#{cnote},inspector=#{inspector},order_no=#{orderNo} where factory_id=#{factoryId}
+     </update>
+
+</mapper>

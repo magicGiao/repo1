@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.giao.ssm.mapper.ContractProductCMapper" >
+<!--&#45;&#45;         into contract_product_c ( CONTRACT_PRODUCT_ID, CONTRACT_ID, FACTORY_ID, PRODUCT_NO, PRODUCT_IMAGE, PRODUCT_DESC, LOADING_RATE, PACKING_UNIT, CNUMBER, PRICE, BOX_NUM, ORDER_NO )-->
+<!--&#45;&#45;         values ( #{contractProductId}, #{contractId}, #{factoryId}, ${productNo}, #{productImage}, #{productDesc}, ${loadingRate}, #{packingUnit}, #{cnumber}, #{costPrice}, #{boxNum}, #{orderNo} )-->
+    <insert id="addPro" parameterType="contractProductC" >
+        insert into contract_product_c
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="contractProductId != null" >
+                CONTRACT_PRODUCT_ID,
+            </if>
+            <if test="contractId != null" >
+                CONTRACT_ID,
+            </if>
+            <if test="factoryId != null" >
+                FACTORY_ID,
+            </if>
+            <if test="productName != null" >
+                PRODUCT_NAME,
+            </if>
+            <if test="productNo != null" >
+                PRODUCT_NO,
+            </if>
+            <if test="productImage != null" >
+                PRODUCT_IMAGE,
+            </if>
+            <if test="productDesc != null" >
+                PRODUCT_DESC,
+            </if>
+            <if test="loadingRate != null" >
+                LOADING_RATE,
+            </if>
+            <if test="packingUnit != null" >
+                PACKING_UNIT,
+            </if>
+            <if test="cnumber != null" >
+                CNUMBER,
+            </if>
+            <if test="outNumber != null" >
+                OUT_NUMBER,
+            </if>
+            <if test="finished != null" >
+                FINISHED,
+            </if>
+            <if test="grossWeight != null" >
+                GROSS_WEIGHT,
+            </if>
+            <if test="netWeight != null" >
+                NET_WEIGHT,
+            </if>
+            <if test="sizeLenght != null" >
+                SIZE_LENGHT,
+            </if>
+            <if test="sizeWidth != null" >
+                SIZE_WIDTH,
+            </if>
+            <if test="sizeHeight != null" >
+                SIZE_HEIGHT,
+            </if>
+            <if test="productRequest != null" >
+                PRODUCT_REQUEST,
+            </if>
+            <if test="factory != null" >
+                FACTORY,
+            </if>
+            <if test="price != null" >
+                PRICE,
+            </if>
+            <if test="amount != null" >
+                AMOUNT,
+            </if>
+            <if test="cunit != null" >
+                CUNIT,
+            </if>
+            <if test="boxNum != null" >
+                BOX_NUM,
+            </if>
+            <if test="exPrice != null" >
+                EX_PRICE,
+            </if>
+            <if test="exUnit != null" >
+                EX_UNIT,
+            </if>
+            <if test="noTax != null" >
+                NO_TAX,
+            </if>
+            <if test="tax != null" >
+                TAX,
+            </if>
+            <if test="costPrice != null" >
+                COST_PRICE,
+            </if>
+            <if test="costTax != null" >
+                COST_TAX,
+            </if>
+            <if test="accessories != null" >
+                ACCESSORIES,
+            </if>
+            <if test="orderNo != null" >
+                ORDER_NO,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="contractProductId != null" >
+                #{contractProductId,jdbcType=VARCHAR},
+            </if>
+            <if test="contractId != null" >
+                #{contractId,jdbcType=VARCHAR},
+            </if>
+            <if test="factoryId != null" >
+                #{factoryId,jdbcType=VARCHAR},
+            </if>
+            <if test="productName != null" >
+                #{productName,jdbcType=VARCHAR},
+            </if>
+            <if test="productNo != null" >
+                #{productNo,jdbcType=VARCHAR},
+            </if>
+            <if test="productImage != null" >
+                #{productImage,jdbcType=VARCHAR},
+            </if>
+            <if test="productDesc != null" >
+                #{productDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="loadingRate != null" >
+                #{loadingRate,jdbcType=VARCHAR},
+            </if>
+            <if test="packingUnit != null" >
+                #{packingUnit,jdbcType=VARCHAR},
+            </if>
+            <if test="cnumber != null" >
+                #{cnumber,jdbcType=INTEGER},
+            </if>
+            <if test="outNumber != null" >
+                #{outNumber,jdbcType=INTEGER},
+            </if>
+            <if test="finished != null" >
+                #{finished,jdbcType=INTEGER},
+            </if>
+            <if test="grossWeight != null" >
+                #{grossWeight,jdbcType=REAL},
+            </if>
+            <if test="netWeight != null" >
+                #{netWeight,jdbcType=REAL},
+            </if>
+            <if test="sizeLenght != null" >
+                #{sizeLenght,jdbcType=REAL},
+            </if>
+            <if test="sizeWidth != null" >
+                #{sizeWidth,jdbcType=REAL},
+            </if>
+            <if test="sizeHeight != null" >
+                #{sizeHeight,jdbcType=REAL},
+            </if>
+            <if test="productRequest != null" >
+                #{productRequest,jdbcType=VARCHAR},
+            </if>
+            <if test="factory != null" >
+                #{factory,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null" >
+                #{price,jdbcType=REAL},
+            </if>
+            <if test="amount != null" >
+                #{amount,jdbcType=REAL},
+            </if>
+            <if test="cunit != null" >
+                #{cunit,jdbcType=VARCHAR},
+            </if>
+            <if test="boxNum != null" >
+                #{boxNum,jdbcType=INTEGER},
+            </if>
+            <if test="exPrice != null" >
+                #{exPrice,jdbcType=REAL},
+            </if>
+            <if test="exUnit != null" >
+                #{exUnit,jdbcType=VARCHAR},
+            </if>
+            <if test="noTax != null" >
+                #{noTax,jdbcType=REAL},
+            </if>
+            <if test="tax != null" >
+                #{tax,jdbcType=REAL},
+            </if>
+            <if test="costPrice != null" >
+                #{costPrice,jdbcType=REAL},
+            </if>
+            <if test="costTax != null" >
+                #{costTax,jdbcType=REAL},
+            </if>
+            <if test="accessories != null" >
+                #{accessories,jdbcType=INTEGER},
+            </if>
+            <if test="orderNo != null" >
+                #{orderNo,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <resultMap id="proList" type="contractProductC">
+        <id property="contractProductId"  column="CONTRACT_PRODUCT_ID"></id>
+        <result property="productNo" column="PRODUCT_NO"></result>
+        <result property="cnumber" column="CNUMBER"></result>
+        <result property="packingUnit" column="PACKING_UNIT"></result>
+        <result property="loadingRate" column="LOADING_RATE"></result>
+        <result property="boxNum" column="BOX_NUM"></result>
+        <result property="price" column="PRICE"></result>
+        <result property="amount" column="AMOUNT"></result>
+        <result property="contractId" column="CONTRACT_ID"></result>
+        <result property="factoryId" column="FACTORY_ID"></result>
+
+        <collection property="factoryC" ofType="com.giao.ssm.pojo.FactoryC">
+            <id property="factoryId" column="FACTORY_ID"></id>
+            <result property="factoryName" column="FACTORY_NAME"></result>
+        </collection>
+
+    </resultMap>
+
+    <select id="findProAll" resultMap="proList" >
+          select f.FACTORY_ID,f.FACTORY_NAME,p.CONTRACT_PRODUCT_ID, p.PRODUCT_NO,p.CNUMBER,p.PACKING_UNIT,p.LOADING_RATE,p.BOX_NUM,p.PRICE,p.AMOUNT
+          FROM CONTRACT_PRODUCT_C p,factory_c f
+          where f.FACTORY_ID=p.FACTORY_ID and p.CONTRACT_ID=#{contractId}
+    </select>
+
+    <delete id="deletePro" parameterType="String">
+        DELETE FROM  CONTRACT_PRODUCT_C  WHERE CONTRACT_PRODUCT_ID IN
+        <foreach collection="array" item="contractProductId" open="(" separator="," close=")">
+        #{contractProductId}
+        </foreach>
+    </delete>
+
+
+
+    <select id="findProOne" resultType="contractProductC" >
+        select  * from CONTRACT_PRODUCT_C  where CONTRACT_PRODUCT_ID=#{contractProductId}
+    </select>
+
+    <select id="findProOneDelete" resultType="contractProductC">
+        SELECT * from CONTRACT_PRODUCT_C where CONTRACT_ID=#{contractId}
+    </select>
+
+    <update id="updatePro" parameterType="contractProductC">
+        update contract_product_c
+        <set >
+            <if test="contractId != null" >
+                CONTRACT_ID = #{contractId,jdbcType=VARCHAR},
+            </if>
+            <if test="factoryId != null" >
+                FACTORY_ID = #{factoryId,jdbcType=VARCHAR},
+            </if>
+            <if test="productName != null" >
+                PRODUCT_NAME = #{productName,jdbcType=VARCHAR},
+            </if>
+            <if test="productNo != null" >
+                PRODUCT_NO = #{productNo,jdbcType=VARCHAR},
+            </if>
+            <if test="productImage != null" >
+                PRODUCT_IMAGE = #{productImage,jdbcType=VARCHAR},
+            </if>
+            <if test="productDesc != null" >
+                PRODUCT_DESC = #{productDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="loadingRate != null" >
+                LOADING_RATE = #{loadingRate,jdbcType=VARCHAR},
+            </if>
+            <if test="packingUnit != null" >
+                PACKING_UNIT = #{packingUnit,jdbcType=VARCHAR},
+            </if>
+            <if test="cnumber != null" >
+                CNUMBER = #{cnumber,jdbcType=INTEGER},
+            </if>
+            <if test="outNumber != null" >
+                OUT_NUMBER = #{outNumber,jdbcType=INTEGER},
+            </if>
+            <if test="finished != null" >
+                FINISHED = #{finished,jdbcType=INTEGER},
+            </if>
+            <if test="grossWeight != null" >
+                GROSS_WEIGHT = #{grossWeight,jdbcType=REAL},
+            </if>
+            <if test="netWeight != null" >
+                NET_WEIGHT = #{netWeight,jdbcType=REAL},
+            </if>
+            <if test="sizeLenght != null" >
+                SIZE_LENGHT = #{sizeLenght,jdbcType=REAL},
+            </if>
+            <if test="sizeWidth != null" >
+                SIZE_WIDTH = #{sizeWidth,jdbcType=REAL},
+            </if>
+            <if test="sizeHeight != null" >
+                SIZE_HEIGHT = #{sizeHeight,jdbcType=REAL},
+            </if>
+            <if test="productRequest != null" >
+                PRODUCT_REQUEST = #{productRequest,jdbcType=VARCHAR},
+            </if>
+            <if test="factory != null" >
+                FACTORY = #{factory,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null" >
+                PRICE = #{price,jdbcType=REAL},
+            </if>
+            <if test="amount != null" >
+                AMOUNT = #{amount,jdbcType=REAL},
+            </if>
+            <if test="cunit != null" >
+                CUNIT = #{cunit,jdbcType=VARCHAR},
+            </if>
+            <if test="boxNum != null" >
+                BOX_NUM = #{boxNum,jdbcType=INTEGER},
+            </if>
+            <if test="exPrice != null" >
+                EX_PRICE = #{exPrice,jdbcType=REAL},
+            </if>
+            <if test="exUnit != null" >
+                EX_UNIT = #{exUnit,jdbcType=VARCHAR},
+            </if>
+            <if test="noTax != null" >
+                NO_TAX = #{noTax,jdbcType=REAL},
+            </if>
+            <if test="tax != null" >
+                TAX = #{tax,jdbcType=REAL},
+            </if>
+            <if test="costPrice != null" >
+                COST_PRICE = #{costPrice,jdbcType=REAL},
+            </if>
+            <if test="costTax != null" >
+                COST_TAX = #{costTax,jdbcType=REAL},
+            </if>
+            <if test="accessories != null" >
+                ACCESSORIES = #{accessories,jdbcType=INTEGER},
+            </if>
+            <if test="orderNo != null" >
+                ORDER_NO = #{orderNo,jdbcType=INTEGER},
+            </if>
+        </set>
+        where CONTRACT_PRODUCT_ID = #{contractProductId,jdbcType=VARCHAR}
+
+    </update>
+
+
+    <select id="findProZj" resultType="contractProductC" >
+        select  amount from CONTRACT_PRODUCT_C  where CONTRACT_ID=#{contractId}
+    </select>
+
+
+</mapper>
